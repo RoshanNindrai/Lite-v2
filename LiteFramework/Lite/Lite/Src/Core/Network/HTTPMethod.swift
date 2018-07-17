@@ -22,9 +22,8 @@ public enum HTTPMethod<Body> {
 }
 
 extension HTTPMethod {
-    
     /// Return the http method as string
-    var method : String {
+    var method: String {
         switch self {
         case .get: return "GET"
         case .post: return "POST"
