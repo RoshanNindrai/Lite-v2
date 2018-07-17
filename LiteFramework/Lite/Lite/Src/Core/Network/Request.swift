@@ -9,10 +9,12 @@
 import Foundation
 
 public typealias JSONDictionary = [String: AnyObject]
+public typealias Header = [String: String]
 
 /// This struct is used to represent a resource
 public struct Request<Resource> {
     let url: URL
     let method: HTTPMethod<Data>
     let parse: (Data) -> Resource?
+    var header: Header?
 }

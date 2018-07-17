@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4DB354EE9F67527964D36BD1 /* Pods_Lite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C91949BFDC224729DA9445A8 /* Pods_Lite.framework */; };
+		AB02602C20FE92B800FDF3A3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02602B20FE92B800FDF3A3 /* Service.swift */; };
+		AB02602F20FE941200FDF3A3 /* PluginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02602E20FE941200FDF3A3 /* PluginType.swift */; };
 		AB15F00820FE7D0E001EE57D /* Lite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB15EFFE20FE7D0E001EE57D /* Lite.framework */; };
 		AB15F00D20FE7D0E001EE57D /* LiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB15F00C20FE7D0E001EE57D /* LiteTests.swift */; };
 		AB15F00F20FE7D0E001EE57D /* Lite.h in Headers */ = {isa = PBXBuildFile; fileRef = AB15F00120FE7D0E001EE57D /* Lite.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		1337AA30A7A8005FBAB7CA69 /* Pods-Lite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lite.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Lite/Pods-Lite.release.xcconfig"; sourceTree = "<group>"; };
+		AB02602B20FE92B800FDF3A3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		AB02602E20FE941200FDF3A3 /* PluginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginType.swift; sourceTree = "<group>"; };
 		AB15EFFE20FE7D0E001EE57D /* Lite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB15F00120FE7D0E001EE57D /* Lite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lite.h; sourceTree = "<group>"; };
 		AB15F00220FE7D0E001EE57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 			children = (
 				AB15F01B20FE7EBF001EE57D /* Request.swift */,
 				AB15F01D20FE7F93001EE57D /* HTTPMethod.swift */,
+				AB02602B20FE92B800FDF3A3 /* Service.swift */,
+				AB02602E20FE941200FDF3A3 /* PluginType.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -290,8 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB02602F20FE941200FDF3A3 /* PluginType.swift in Sources */,
 				AB15F01E20FE7F93001EE57D /* HTTPMethod.swift in Sources */,
 				AB15F01C20FE7EBF001EE57D /* Request.swift in Sources */,
+				AB02602C20FE92B800FDF3A3 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

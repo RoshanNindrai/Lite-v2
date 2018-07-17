@@ -8,6 +8,7 @@ SWIFT_LINT=${PODS_ROOT}/SwiftLint/swiftlint
 # Run SwiftLint for given filename
 run_swiftlint() {
 local filename="${1}"
+${SWIFT_LINT} autocorrect --path "${filename}"
 ${SWIFT_LINT} lint --path "${filename}"
 }
 
