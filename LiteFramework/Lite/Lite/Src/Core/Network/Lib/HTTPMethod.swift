@@ -14,21 +14,41 @@ import Foundation
 /// - GET:    used for a get request
 /// - DELETE: used for a delete request
 /// - PUT:    used for a put request
-public enum HTTPMethod<Body> {
+public enum HTTPMethod {
     case get
-    case post(Body)
-    case delete(Body)
-    case put(Body)
+    case post([String: String])
+    case delete([String: String])
+    case put([String: String])
+}
+
+struct Coder {
+    static let encoder = JSONEncoder()
+    static let decoder = JSONDecoder()
 }
 
 extension HTTPMethod {
     /// Return the http method as string
-    var method: String {
+    var methodString: String {
         switch self {
         case .get: return "GET"
         case .post: return "POST"
         case .delete: return "DELETE"
         case .put: return "PUT"
+        }
+    }
+
+    /// Data used to send via wire
+    var data: Data? {
+        switch self {
+        case .get:
+            return nil
+        case let .post(body):
+            return try? Coder.encoder.encode(body)
+        case let .delete(data):
+            return try? Coder.encoder.encode(data)
+        case let .put(data):
+            return try? Coder.encoder.encode(data)
+
         }
     }
 }
