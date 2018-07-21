@@ -19,16 +19,13 @@ public final class Request<Resource: Codable> {
 
     var header: Header?
     var parameters: [String: Any]?
-    var body: Codable?
-
-    private(set) var onSuccessClosure: ((Resource?, (Data, URLResponse)) -> Void)?
-    private(set) var onFailureClosure: ((Error) -> Void)?
+    var body: Data?
 
     init(url: URL, method: HTTPMethod,
          type: RequestType,
          header: Header? = nil,
          parameters: [String: Any]? = nil,
-         body: Codable? = nil) {
+         body: Data? = nil) {
 
         self.type = type
         self.url = url
@@ -39,25 +36,14 @@ public final class Request<Resource: Codable> {
     }
 }
 
-// MARK: - Conformance to Network Operation
 extension Request {
-    /// This method is Called when the network operation completes and it has a success response
-    ///
-    /// - Parameter handler: A function that is provided with the actual network data and response
-    /// - Returns: THe current operation
-    @discardableResult
-    public func onSuccess(_ handler: @escaping (Resource?, (Data, URLResponse)) -> Void) -> Request<Resource> {
-        onSuccessClosure = handler
-        return self
+
+    convenience init(_ provider: ProviderType) {
+        self.init(url: provider.fullPathUrl,
+                  method: provider.method,
+                  type: provider.type,
+                  header: provider.header,
+                  parameters: provider.parameters, body: provider.body)
     }
 
-    /// This method is Called when the network operation completes with a failure
-    ///
-    /// - Parameter handler: A function that is provided with the actual error data
-    /// - Returns: THe current operation
-    @discardableResult
-    public func onFailure(_ handler: @escaping (Error) -> Void) -> Request<Resource> {
-        onFailureClosure = handler
-        return self
-    }
 }

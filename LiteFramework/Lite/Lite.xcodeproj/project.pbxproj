@@ -18,6 +18,9 @@
 		AB0260402103A06800FDF3A3 /* StringUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02603F2103A06800FDF3A3 /* StringUtilsTests.swift */; };
 		AB0260432103A1A100FDF3A3 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260422103A1A100FDF3A3 /* ServiceTests.swift */; };
 		AB0260452103A69400FDF3A3 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260442103A69400FDF3A3 /* RequestType.swift */; };
+		AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260482103EBCF00FDF3A3 /* Provider.swift */; };
+		AB02604B2103F07600FDF3A3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02604A2103F07600FDF3A3 /* Response.swift */; };
+		AB02604D2103F4FF00FDF3A3 /* HttpBinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02604C2103F4FF00FDF3A3 /* HttpBinProvider.swift */; };
 		AB15F00820FE7D0E001EE57D /* Lite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB15EFFE20FE7D0E001EE57D /* Lite.framework */; };
 		AB15F00F20FE7D0E001EE57D /* Lite.h in Headers */ = {isa = PBXBuildFile; fileRef = AB15F00120FE7D0E001EE57D /* Lite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB15F01C20FE7EBF001EE57D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB15F01B20FE7EBF001EE57D /* Request.swift */; };
@@ -46,6 +49,9 @@
 		AB02603F2103A06800FDF3A3 /* StringUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtilsTests.swift; sourceTree = "<group>"; };
 		AB0260422103A1A100FDF3A3 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		AB0260442103A69400FDF3A3 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		AB0260482103EBCF00FDF3A3 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		AB02604A2103F07600FDF3A3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		AB02604C2103F4FF00FDF3A3 /* HttpBinProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBinProvider.swift; sourceTree = "<group>"; };
 		AB15EFFE20FE7D0E001EE57D /* Lite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB15F00120FE7D0E001EE57D /* Lite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lite.h; sourceTree = "<group>"; };
 		AB15F00220FE7D0E001EE57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +118,8 @@
 				AB02602B20FE92B800FDF3A3 /* Service.swift */,
 				AB02602E20FE941200FDF3A3 /* PluginType.swift */,
 				AB0260442103A69400FDF3A3 /* RequestType.swift */,
+				AB0260482103EBCF00FDF3A3 /* Provider.swift */,
+				AB02604A2103F07600FDF3A3 /* Response.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				AB0260422103A1A100FDF3A3 /* ServiceTests.swift */,
+				AB02604C2103F4FF00FDF3A3 /* HttpBinProvider.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -370,9 +379,11 @@
 				AB15F01E20FE7F93001EE57D /* HTTPMethod.swift in Sources */,
 				AB15F01C20FE7EBF001EE57D /* Request.swift in Sources */,
 				AB0260362103894E00FDF3A3 /* DataOperation.swift in Sources */,
+				AB02604B2103F07600FDF3A3 /* Response.swift in Sources */,
 				AB02603821038BC400FDF3A3 /* URLRequest+Request.swift in Sources */,
 				AB02603C210395DA00FDF3A3 /* String+Utils.swift in Sources */,
 				AB0260322103888700FDF3A3 /* AsyncOperation.swift in Sources */,
+				AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */,
 				AB02603A21038FBD00FDF3A3 /* NetworkOperation.swift in Sources */,
 				AB02602C20FE92B800FDF3A3 /* Service.swift in Sources */,
 				AB0260452103A69400FDF3A3 /* RequestType.swift in Sources */,
@@ -384,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB0260402103A06800FDF3A3 /* StringUtilsTests.swift in Sources */,
+				AB02604D2103F4FF00FDF3A3 /* HttpBinProvider.swift in Sources */,
 				AB0260432103A1A100FDF3A3 /* ServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

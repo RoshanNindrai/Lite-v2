@@ -13,9 +13,11 @@ import Foundation
 public class NetworkOperation<Resource: Codable>: AsyncOperation {
     let session: URLSession
     let request: Request<Resource>
+    let responseCallback: ResponseCallback<Resource>
 
-    init(_ session: URLSession, _ request: Request<Resource>) {
+    init(_ session: URLSession, _ request: Request<Resource>, _ responseCallback: ResponseCallback<Resource>) {
         self.session = session
         self.request = request
+        self.responseCallback = responseCallback
     }
 }

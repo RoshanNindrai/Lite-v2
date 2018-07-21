@@ -29,7 +29,7 @@ struct GetResponse: Codable {
     let args: [String: String]
     let headers: [String: String]
     let origin: String
-    let form: [String: String]
+    let form: [String: String]?
     let url: URL
 }
 
@@ -37,35 +37,30 @@ class ServiceTests: XCTestCase {
 
     func testGetDataOperation() {
         let getexpectation = expectation(description: "This is a test for get request")
-        let request = Request<GetResponse>(url: URL(string: "https://httpbin.org/get")!, method: .get,
-                                      type: RequestType.data).onSuccess { [ getexpectation ] (data, response) in
+        Service.perform(HttpBin.get, ResponseCallback<GetResponse> { [ getexpectation ] response in
+            switch response {
+            case let .success(data, _):
                 XCTAssertNotNil(data)
-                XCTAssertEqual(data?.url, URL(string: "https://httpbin.org/get")!)
-                XCTAssertNotNil(response)
                 getexpectation.fulfill()
-        }.onFailure { (error) in
-                XCTAssertNotNil(error)
-        }
-
-        Service.perform(request)
+            case .failure:
+                XCTAssertTrue(false)
+            }
+        })
         waitForExpectations(timeout: 10, handler: nil)
     }
 
     func testPostDataOperation() {
         let getexpectation = expectation(description: "This is a test for get request")
-        let request = Request<GetResponse>(url: URL(string: "https://httpbin.org/post")!,
-                                           method: .post(["data": "me"]),
-                                           type: RequestType.data).onSuccess { [ getexpectation ] (data, response) in
-                                            XCTAssertNotNil(data)
-                                            XCTAssertNotNil(data?.form)
-                                            XCTAssertEqual(data?.url, URL(string: "https://httpbin.org/post")!)
-                                            XCTAssertNotNil(response)
-                                            getexpectation.fulfill()
-            }.onFailure { (error) in
-                XCTAssertNotNil(error)
-        }
-
-        Service.perform(request)
+        Service.perform(HttpBin.post(HTTPBinPost()), ResponseCallback<GetResponse> { [ getexpectation ] response in
+            switch response {
+            case let .success(data, _):
+                XCTAssertNotNil(data)
+                XCTAssertNotNil(data?.form)
+                getexpectation.fulfill()
+            case .failure:
+                XCTAssertTrue(false)
+            }
+        })
         waitForExpectations(timeout: 10, handler: nil)
     }
 

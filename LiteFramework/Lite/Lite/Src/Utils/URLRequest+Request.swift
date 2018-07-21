@@ -11,8 +11,8 @@ import Foundation
 public extension URLRequest {
     init<Resource>(_ request: Request<Resource>) {
         self.init(url: request.url)
-        httpMethod = request.method.methodString
+        httpMethod = request.method.rawValue
         allHTTPHeaderFields = request.header
-        httpBody = request.method.data
+        httpBody = request.body
     }
 }

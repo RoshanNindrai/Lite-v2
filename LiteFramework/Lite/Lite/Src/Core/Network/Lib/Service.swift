@@ -57,16 +57,16 @@ public extension Service {
 // MARK: - Task executions
 public extension Service {
 
-    private func perform<Resource>(_ request: Request<Resource>) {
-        switch request.type {
+    private func perform<Resource: Codable>(_ provider: ProviderType, _ responseCallback: ResponseCallback<Resource>) {
+        switch provider.type {
         case .data:
-            let operation = DataOperation(session, request)
+            let operation = DataOperation(session, Request<Resource>(provider), responseCallback)
             queue.addOperation(operation)
         }
     }
 
-    static func perform<Resource>(_ request: Request<Resource>) {
-        shared.perform(request)
+    static func perform<Resource: Codable>(_ provider: ProviderType, _ responseCallback: ResponseCallback<Resource>) {
+        return shared.perform(provider, responseCallback)
     }
 
 }
