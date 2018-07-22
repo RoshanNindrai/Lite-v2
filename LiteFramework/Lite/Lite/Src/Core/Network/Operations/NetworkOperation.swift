@@ -12,7 +12,7 @@ import Foundation
 /// Refer DataOperation for concrete implementation
 public class NetworkOperation<Resource: Codable>: AsyncOperation {
     let session: URLSession
-    let request: Request<Resource>
+    private(set) var request: Request<Resource>
     let responseCallback: ResponseCallback<Resource>
 
     init(_ session: URLSession, _ request: Request<Resource>, _ responseCallback: ResponseCallback<Resource>) {
@@ -20,4 +20,19 @@ public class NetworkOperation<Resource: Codable>: AsyncOperation {
         self.request = request
         self.responseCallback = responseCallback
     }
+
+    public override func main() {
+
+        if isCancelled {
+            state = .finished
+            return
+        }
+
+        let plugins = request.plugins
+        request = plugins.reduce(request, { (request, plugin) in
+            return plugin.willMakeRequest(with: request)
+        })
+
+    }
+
 }

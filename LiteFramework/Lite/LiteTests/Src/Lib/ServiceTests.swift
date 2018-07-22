@@ -64,4 +64,19 @@ class ServiceTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
     }
 
+    func testDefaultPlugin() {
+        let getexpectation = expectation(description: "This is a test for get request")
+        Service.add(plugins: [MockPlugin()])
+        Service.perform(HttpBin.get, ResponseCallback<GetResponse> { [ getexpectation ] response in
+            switch response {
+            case let .success(data, _):
+                XCTAssertNotNil(data)
+                getexpectation.fulfill()
+            case .failure:
+                XCTAssertTrue(false)
+            }
+        })
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+
 }

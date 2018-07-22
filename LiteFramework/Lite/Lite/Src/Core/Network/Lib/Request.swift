@@ -12,7 +12,7 @@ public typealias JSONDictionary = [String: AnyObject]
 public typealias Header = [String: String]
 
 /// This struct is used to represent a resource
-public final class Request<Resource: Codable> {
+public struct Request<Resource: Codable> {
     let url: URL
     let method: HTTPMethod
     let type: RequestType
@@ -20,6 +20,8 @@ public final class Request<Resource: Codable> {
     var header: Header?
     var parameters: [String: Any]?
     var body: Data?
+
+    private(set) var plugins: [PluginType] = []
 
     init(url: URL, method: HTTPMethod,
          type: RequestType,
@@ -38,12 +40,25 @@ public final class Request<Resource: Codable> {
 
 extension Request {
 
-    convenience init(_ provider: ProviderType) {
+    /// Creates a request for a given provider
+    ///
+    /// - Parameter provider: A specific provider type for example httpbin, github
+    init(_ provider: ProviderType) {
         self.init(url: provider.fullPathUrl,
                   method: provider.method,
                   type: provider.type,
                   header: provider.header,
                   parameters: provider.parameters, body: provider.body)
     }
+}
 
+// MARK: - Plugins related methods
+extension Request {
+    mutating func addPlugin(_ plugin: PluginType) {
+        plugins.append(plugin)
+    }
+
+    mutating func addPlugins(_ plugins: [PluginType]) {
+        self.plugins.append(contentsOf: plugins)
+    }
 }

@@ -60,7 +60,9 @@ public extension Service {
     private func perform<Resource: Codable>(_ provider: ProviderType, _ responseCallback: ResponseCallback<Resource>) {
         switch provider.type {
         case .data:
-            let operation = DataOperation(session, Request<Resource>(provider), responseCallback)
+            var request = Request<Resource>(provider)
+            request.addPlugins(plugins)
+            let operation = DataOperation(session, request, responseCallback)
             queue.addOperation(operation)
         }
     }

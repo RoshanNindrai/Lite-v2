@@ -18,13 +18,17 @@ public final class DataOperation<Resource: Codable>: NetworkOperation<Resource> 
     private var task: URLSessionDataTask?
 
     public override func main() {
-        if isCancelled {
-            state = .finished
-        }
+        super.main()
         task = session.dataTask(with: URLRequest(request)) { [unowned self] (data, response, error) in
+
+            let plugins = self.request.plugins
+            let mutatedResponse = plugins.reduce((data, response, error), { (serviceResponse, plugin) in
+                return plugin.willParseResponse(response: serviceResponse, for: self.request)
+            })
+
             if let error = error {
                 self.responseCallback.handler(.failure(error))
-            } else if let data = data, let response = response {
+            } else if let data = mutatedResponse.0, let response = mutatedResponse.1 {
                 let parsedData = try? Coder.decoder.decode(Resource.self, from: data)
                 self.responseCallback.handler(Response<Resource>.success(parsedData, (data, response)))
             }
