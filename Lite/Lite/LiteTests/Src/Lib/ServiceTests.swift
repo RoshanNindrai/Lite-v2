@@ -35,9 +35,11 @@ struct GetResponse: Codable {
 
 class ServiceTests: XCTestCase {
 
+    let provider: ServiceProvider<HttpBin> = ServiceProvider<HttpBin>()
+
     func testGetDataOperation() {
         let getexpectation = expectation(description: "This is a test for get request")
-        Service.perform(HttpBin.get, ResponseCallback<GetResponse> { [ getexpectation ] response in
+        provider.perform(.get, ResponseCallback<GetResponse> { [ getexpectation ] response in
             switch response {
             case let .success(data, _):
                 XCTAssertNotNil(data)
@@ -51,7 +53,7 @@ class ServiceTests: XCTestCase {
 
     func testPostDataOperation() {
         let getexpectation = expectation(description: "This is a test for get request")
-        Service.perform(HttpBin.post(HTTPBinPost()), ResponseCallback<GetResponse> { [ getexpectation ] response in
+        provider.perform(.post(HTTPBinPost()), ResponseCallback<GetResponse> { [ getexpectation ] response in
             switch response {
             case let .success(data, _):
                 XCTAssertNotNil(data)
@@ -67,7 +69,7 @@ class ServiceTests: XCTestCase {
     func testDefaultPlugin() {
         let getexpectation = expectation(description: "This is a test for get request")
         Service.add(plugins: [MockPlugin()])
-        Service.perform(HttpBin.get, ResponseCallback<GetResponse> { [ getexpectation ] response in
+        provider.perform(.get, ResponseCallback<GetResponse> { [ getexpectation ] response in
             switch response {
             case let .success(data, _):
                 XCTAssertNotNil(data)
