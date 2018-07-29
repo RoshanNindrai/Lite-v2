@@ -9,6 +9,9 @@
 import Foundation
 
 public protocol Provider {
+
+    var service: Service { get set }
+
     associatedtype ServiceProviderType: ProviderType
     associatedtype ResponseType: Codable
     func perform(_ provider: ServiceProviderType,
@@ -19,8 +22,14 @@ public protocol Provider {
 public extension Provider {
     func perform(_ provider: ServiceProviderType,
                  _ responseCallback: @escaping (Response<ResponseType>) -> Void) {
-        Service.perform(provider, ResponseCallback<ResponseType>(handler: responseCallback))
+        service.perform(provider, ResponseCallback<ResponseType>(handler: responseCallback))
     }
 }
 
-public struct ServiceProvider<ServiceProviderType: ProviderType, ResponseType: Codable>: Provider {}
+public struct ServiceProvider<ServiceProviderType: ProviderType, ResponseType: Codable>: Provider {
+    public var service: Service
+
+    public init(service: Service = Service.shared) {
+        self.service = service
+    }
+}

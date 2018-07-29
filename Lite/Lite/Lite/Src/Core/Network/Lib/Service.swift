@@ -23,7 +23,7 @@ public final class Service: NSObject {
     //  The actual session object
     private var session: URLSession
     //  shared object for performing all WebService calls
-    static let shared: Service = Service()
+    public static let shared: Service = Service()
 
     override init() {
         session = URLSession.init(configuration: sessionConfig)
@@ -57,7 +57,7 @@ public extension Service {
 // MARK: - Task executions
 public extension Service {
 
-    private func perform<Resource: Codable>(_ provider: ProviderType, _ responseCallback: ResponseCallback<Resource>) {
+    func perform<Resource: Codable>(_ provider: ProviderType, _ responseCallback: ResponseCallback<Resource>) {
         switch provider.type {
         case .data:
             var request = Request<Resource>(provider)
