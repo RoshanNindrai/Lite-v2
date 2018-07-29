@@ -14,8 +14,6 @@
 		AB0260362103894E00FDF3A3 /* DataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260352103894E00FDF3A3 /* DataOperation.swift */; };
 		AB02603821038BC400FDF3A3 /* URLRequest+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02603721038BC400FDF3A3 /* URLRequest+Request.swift */; };
 		AB02603A21038FBD00FDF3A3 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02603921038FBD00FDF3A3 /* NetworkOperation.swift */; };
-		AB02603C210395DA00FDF3A3 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02603B210395DA00FDF3A3 /* String+Utils.swift */; };
-		AB0260402103A06800FDF3A3 /* StringUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02603F2103A06800FDF3A3 /* StringUtilsTests.swift */; };
 		AB0260432103A1A100FDF3A3 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260422103A1A100FDF3A3 /* ServiceTests.swift */; };
 		AB0260452103A69400FDF3A3 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260442103A69400FDF3A3 /* RequestType.swift */; };
 		AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260482103EBCF00FDF3A3 /* Provider.swift */; };
@@ -47,8 +45,6 @@
 		AB0260352103894E00FDF3A3 /* DataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataOperation.swift; sourceTree = "<group>"; };
 		AB02603721038BC400FDF3A3 /* URLRequest+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Request.swift"; sourceTree = "<group>"; };
 		AB02603921038FBD00FDF3A3 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
-		AB02603B210395DA00FDF3A3 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
-		AB02603F2103A06800FDF3A3 /* StringUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtilsTests.swift; sourceTree = "<group>"; };
 		AB0260422103A1A100FDF3A3 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		AB0260442103A69400FDF3A3 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		AB0260482103EBCF00FDF3A3 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
@@ -109,7 +105,6 @@
 			children = (
 				AB0260312103888700FDF3A3 /* AsyncOperation.swift */,
 				AB02603721038BC400FDF3A3 /* URLRequest+Request.swift */,
-				AB02603B210395DA00FDF3A3 /* String+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -142,17 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				AB0260412103A18700FDF3A3 /* Lib */,
-				AB02603E2103A03D00FDF3A3 /* Utils */,
 			);
 			path = Src;
-			sourceTree = "<group>";
-		};
-		AB02603E2103A03D00FDF3A3 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				AB02603F2103A06800FDF3A3 /* StringUtilsTests.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		AB0260412103A18700FDF3A3 /* Lib */ = {
@@ -395,7 +381,6 @@
 				AB0260362103894E00FDF3A3 /* DataOperation.swift in Sources */,
 				AB02604B2103F07600FDF3A3 /* Response.swift in Sources */,
 				AB02603821038BC400FDF3A3 /* URLRequest+Request.swift in Sources */,
-				AB02603C210395DA00FDF3A3 /* String+Utils.swift in Sources */,
 				AB0260322103888700FDF3A3 /* AsyncOperation.swift in Sources */,
 				AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */,
 				AB02603A21038FBD00FDF3A3 /* NetworkOperation.swift in Sources */,
@@ -409,7 +394,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0260402103A06800FDF3A3 /* StringUtilsTests.swift in Sources */,
 				AB02604D2103F4FF00FDF3A3 /* HttpBinProvider.swift in Sources */,
 				AB02604F210402F700FDF3A3 /* Plugins.swift in Sources */,
 				AB0260432103A1A100FDF3A3 /* ServiceTests.swift in Sources */,

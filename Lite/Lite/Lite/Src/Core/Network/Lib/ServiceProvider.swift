@@ -10,14 +10,17 @@ import Foundation
 
 public protocol Provider {
     associatedtype ServiceProviderType: ProviderType
-    func perform<Resource: Codable>(_ provider: ServiceProviderType, _ responseCallback: ResponseCallback<Resource>)
+    associatedtype ResponseType: Codable
+    func perform(_ provider: ServiceProviderType,
+                 _ responseCallback: @escaping (Response<ResponseType>) -> Void)
 }
 
 // MARK: - Task executions
 public extension Provider {
-    func perform<Resource: Codable>(_ provider: ServiceProviderType, _ responseCallback: ResponseCallback<Resource>) {
-        Service.perform(provider, responseCallback)
+    func perform(_ provider: ServiceProviderType,
+                 _ responseCallback: @escaping (Response<ResponseType>) -> Void) {
+        Service.perform(provider, ResponseCallback<ResponseType>(handler: responseCallback))
     }
 }
 
-public struct ServiceProvider<ServiceProviderType: ProviderType>: Provider {}
+public struct ServiceProvider<ServiceProviderType: ProviderType, ResponseType: Codable>: Provider {}

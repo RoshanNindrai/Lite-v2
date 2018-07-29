@@ -16,7 +16,7 @@ public enum State: String {
     }
 
     private func isPrefixed() -> String {
-        return "is" + rawValue.firstUppercased
+        return "is" + rawValue.capitalized
     }
 }
 

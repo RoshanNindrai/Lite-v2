@@ -35,11 +35,11 @@ struct GetResponse: Codable {
 
 class ServiceTests: XCTestCase {
 
-    let provider: ServiceProvider<HttpBin> = ServiceProvider<HttpBin>()
+    let provider: ServiceProvider<HttpBin, GetResponse> = ServiceProvider<HttpBin, GetResponse>()
 
     func testGetDataOperation() {
         let getexpectation = expectation(description: "This is a test for get request")
-        provider.perform(.get, ResponseCallback<GetResponse> { [ getexpectation ] response in
+        provider.perform(.get) { [ getexpectation ] response in
             switch response {
             case let .success(data, _):
                 XCTAssertNotNil(data)
@@ -47,13 +47,13 @@ class ServiceTests: XCTestCase {
             case .failure:
                 XCTAssertTrue(false)
             }
-        })
+        }
         waitForExpectations(timeout: 10, handler: nil)
     }
 
     func testPostDataOperation() {
         let getexpectation = expectation(description: "This is a test for get request")
-        provider.perform(.post(HTTPBinPost()), ResponseCallback<GetResponse> { [ getexpectation ] response in
+        provider.perform(.post(HTTPBinPost())) { [ getexpectation ] response in
             switch response {
             case let .success(data, _):
                 XCTAssertNotNil(data)
@@ -62,14 +62,14 @@ class ServiceTests: XCTestCase {
             case .failure:
                 XCTAssertTrue(false)
             }
-        })
+        }
         waitForExpectations(timeout: 10, handler: nil)
     }
 
     func testDefaultPlugin() {
         let getexpectation = expectation(description: "This is a test for get request")
         Service.add(plugins: [MockPlugin()])
-        provider.perform(.get, ResponseCallback<GetResponse> { [ getexpectation ] response in
+        provider.perform(.get) { [ getexpectation ] response in
             switch response {
             case let .success(data, _):
                 XCTAssertNotNil(data)
@@ -77,7 +77,7 @@ class ServiceTests: XCTestCase {
             case .failure:
                 XCTAssertTrue(false)
             }
-        })
+        }
         waitForExpectations(timeout: 10, handler: nil)
     }
 
