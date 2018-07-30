@@ -10,7 +10,7 @@ import Foundation
 
 public protocol Provider {
 
-    var service: Service { get set }
+    var service: Service { get }
 
     associatedtype ServiceProviderType: ProviderType
     associatedtype ResponseType: Codable
