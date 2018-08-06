@@ -9,10 +9,15 @@
 import Foundation
 
 public enum Response<Resource> {
-    case success(Resource?, (Data, URLResponse))
+    case success(Resource?)
     case failure(Error)
 }
 
 public struct ResponseCallback<Resource> {
     let handler: (Response<Resource>) -> Void
+
+    func handle(_ response: Response<Resource>) {
+        handler(response)
+    }
+
 }

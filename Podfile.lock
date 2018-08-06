@@ -7,7 +7,7 @@ PODS:
   - SwiftLint (0.26.0)
 
 DEPENDENCIES:
-  - RealmSwift
+  - RealmSwift (= 3.7.4)
   - SwiftLint (= 0.26.0)
 
 SPEC REPOS:
@@ -21,6 +21,6 @@ SPEC CHECKSUMS:
   RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
 
-PODFILE CHECKSUM: 826304c60a3f2feaf0350af9036d855b0f479a3b
+PODFILE CHECKSUM: c043d80cc8b523584156c7e73fd833dc513247f5
 
 COCOAPODS: 1.5.3

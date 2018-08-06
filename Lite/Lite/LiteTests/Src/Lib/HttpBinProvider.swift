@@ -61,3 +61,9 @@ extension HttpBin {
         return nil
     }
 }
+
+extension HttpBin: PersistenceProviderType {
+    var predicate: NSPredicate {
+        return NSPredicate(format: "url == %@", "https://httpbin.org/get")
+    }
+}

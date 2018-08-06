@@ -14,17 +14,29 @@
 		AB0260362103894E00FDF3A3 /* DataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260352103894E00FDF3A3 /* DataOperation.swift */; };
 		AB02603821038BC400FDF3A3 /* URLRequest+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02603721038BC400FDF3A3 /* URLRequest+Request.swift */; };
 		AB02603A21038FBD00FDF3A3 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02603921038FBD00FDF3A3 /* NetworkOperation.swift */; };
-		AB0260432103A1A100FDF3A3 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260422103A1A100FDF3A3 /* ServiceTests.swift */; };
+		AB0260432103A1A100FDF3A3 /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260422103A1A100FDF3A3 /* NetworkServiceTest.swift */; };
 		AB0260452103A69400FDF3A3 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260442103A69400FDF3A3 /* RequestType.swift */; };
 		AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260482103EBCF00FDF3A3 /* Provider.swift */; };
 		AB02604B2103F07600FDF3A3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02604A2103F07600FDF3A3 /* Response.swift */; };
 		AB02604D2103F4FF00FDF3A3 /* HttpBinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02604C2103F4FF00FDF3A3 /* HttpBinProvider.swift */; };
 		AB02604F210402F700FDF3A3 /* Plugins.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02604E210402F700FDF3A3 /* Plugins.swift */; };
-		AB12B161210960C50067BCA7 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12B160210960C50067BCA7 /* ServiceProvider.swift */; };
+		AB12B161210960C50067BCA7 /* NetworkServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12B160210960C50067BCA7 /* NetworkServiceProvider.swift */; };
 		AB15F00820FE7D0E001EE57D /* Lite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB15EFFE20FE7D0E001EE57D /* Lite.framework */; };
 		AB15F00F20FE7D0E001EE57D /* Lite.h in Headers */ = {isa = PBXBuildFile; fileRef = AB15F00120FE7D0E001EE57D /* Lite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AB15F01C20FE7EBF001EE57D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB15F01B20FE7EBF001EE57D /* Request.swift */; };
 		AB15F01E20FE7F93001EE57D /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB15F01D20FE7F93001EE57D /* HTTPMethod.swift */; };
+		AB486E6C2115F4AD0051802B /* PersistenceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E6B2115F4AD0051802B /* PersistenceProtocol.swift */; };
+		AB486E6E2115F5B60051802B /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E6D2115F5B60051802B /* Future.swift */; };
+		AB486E7121160AFB0051802B /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7021160AFB0051802B /* RealmService.swift */; };
+		AB486E73211610890051802B /* PersistenceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E72211610890051802B /* PersistenceProvider.swift */; };
+		AB486E78211632700051802B /* PipelineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E77211632700051802B /* PipelineProtocol.swift */; };
+		AB486E7A21166A9E0051802B /* RealmPersistedServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */; };
+		AB486E7C21166FF10051802B /* PersistedServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7B21166FF10051802B /* PersistedServiceTest.swift */; };
+		ABBA5E49211676A8003063F4 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E48211676A8003063F4 /* ResponseModel.swift */; };
+		ABBA5E4B2116806C003063F4 /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4A2116806C003063F4 /* Cacheable.swift */; };
+		ABBA5E4D2117DF73003063F4 /* LiteServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */; };
+		ABBA5E4F2117EBAA003063F4 /* LiteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4E2117EBAA003063F4 /* LiteServiceTest.swift */; };
+		BF5A405DB39F74C7972A19CB /* Pods_LiteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EA7EC3710F1088CD1B8E71 /* Pods_LiteTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,19 +51,22 @@
 
 /* Begin PBXFileReference section */
 		1337AA30A7A8005FBAB7CA69 /* Pods-Lite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lite.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-Lite/Pods-Lite.release.xcconfig"; sourceTree = "<group>"; };
+		51FA862E429BC827F3381C23 /* Pods-LiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteTests.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-LiteTests/Pods-LiteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		60EA7EC3710F1088CD1B8E71 /* Pods_LiteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C9BD2FF526D8BC6C99C1145 /* Pods-LiteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiteTests.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-LiteTests/Pods-LiteTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB02602B20FE92B800FDF3A3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		AB02602E20FE941200FDF3A3 /* PluginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PluginType.swift; sourceTree = "<group>"; };
 		AB0260312103888700FDF3A3 /* AsyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		AB0260352103894E00FDF3A3 /* DataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataOperation.swift; sourceTree = "<group>"; };
 		AB02603721038BC400FDF3A3 /* URLRequest+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Request.swift"; sourceTree = "<group>"; };
 		AB02603921038FBD00FDF3A3 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
-		AB0260422103A1A100FDF3A3 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		AB0260422103A1A100FDF3A3 /* NetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTest.swift; sourceTree = "<group>"; };
 		AB0260442103A69400FDF3A3 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		AB0260482103EBCF00FDF3A3 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		AB02604A2103F07600FDF3A3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AB02604C2103F4FF00FDF3A3 /* HttpBinProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBinProvider.swift; sourceTree = "<group>"; };
 		AB02604E210402F700FDF3A3 /* Plugins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugins.swift; sourceTree = "<group>"; };
-		AB12B160210960C50067BCA7 /* ServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		AB12B160210960C50067BCA7 /* NetworkServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProvider.swift; sourceTree = "<group>"; };
 		AB15EFFE20FE7D0E001EE57D /* Lite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB15F00120FE7D0E001EE57D /* Lite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lite.h; sourceTree = "<group>"; };
 		AB15F00220FE7D0E001EE57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +74,17 @@
 		AB15F00E20FE7D0E001EE57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB15F01B20FE7EBF001EE57D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		AB15F01D20FE7F93001EE57D /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		AB486E6B2115F4AD0051802B /* PersistenceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceProtocol.swift; sourceTree = "<group>"; };
+		AB486E6D2115F5B60051802B /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		AB486E7021160AFB0051802B /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		AB486E72211610890051802B /* PersistenceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceProvider.swift; sourceTree = "<group>"; };
+		AB486E77211632700051802B /* PipelineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineProtocol.swift; sourceTree = "<group>"; };
+		AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistedServiceProvider.swift; sourceTree = "<group>"; };
+		AB486E7B21166FF10051802B /* PersistedServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedServiceTest.swift; sourceTree = "<group>"; };
+		ABBA5E48211676A8003063F4 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		ABBA5E4A2116806C003063F4 /* Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
+		ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteServiceProvider.swift; sourceTree = "<group>"; };
+		ABBA5E4E2117EBAA003063F4 /* LiteServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteServiceTest.swift; sourceTree = "<group>"; };
 		B03341468FD22A42F49B3C77 /* Pods-Lite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lite.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Lite/Pods-Lite.debug.xcconfig"; sourceTree = "<group>"; };
 		C91949BFDC224729DA9445A8 /* Pods_Lite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB15F00820FE7D0E001EE57D /* Lite.framework in Frameworks */,
+				BF5A405DB39F74C7972A19CB /* Pods_LiteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				C91949BFDC224729DA9445A8 /* Pods_Lite.framework */,
+				60EA7EC3710F1088CD1B8E71 /* Pods_LiteTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,6 +124,8 @@
 			children = (
 				B03341468FD22A42F49B3C77 /* Pods-Lite.debug.xcconfig */,
 				1337AA30A7A8005FBAB7CA69 /* Pods-Lite.release.xcconfig */,
+				51FA862E429BC827F3381C23 /* Pods-LiteTests.debug.xcconfig */,
+				8C9BD2FF526D8BC6C99C1145 /* Pods-LiteTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -105,6 +135,7 @@
 			children = (
 				AB0260312103888700FDF3A3 /* AsyncOperation.swift */,
 				AB02603721038BC400FDF3A3 /* URLRequest+Request.swift */,
+				AB486E6D2115F5B60051802B /* Future.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -119,7 +150,6 @@
 				AB0260442103A69400FDF3A3 /* RequestType.swift */,
 				AB0260482103EBCF00FDF3A3 /* Provider.swift */,
 				AB02604A2103F07600FDF3A3 /* Response.swift */,
-				AB12B160210960C50067BCA7 /* ServiceProvider.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -144,9 +174,12 @@
 		AB0260412103A18700FDF3A3 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				AB0260422103A1A100FDF3A3 /* ServiceTests.swift */,
+				ABBA5E48211676A8003063F4 /* ResponseModel.swift */,
+				AB0260422103A1A100FDF3A3 /* NetworkServiceTest.swift */,
 				AB02604C2103F4FF00FDF3A3 /* HttpBinProvider.swift */,
 				AB02604E210402F700FDF3A3 /* Plugins.swift */,
+				AB486E7B21166FF10051802B /* PersistedServiceTest.swift */,
+				ABBA5E4E2117EBAA003063F4 /* LiteServiceTest.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -202,6 +235,7 @@
 		AB15F01920FE7DA7001EE57D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AB486E762116325F0051802B /* Common */,
 				ABC2B98B2104DA80006E78F2 /* Cache */,
 				AB15F01A20FE7E73001EE57D /* Network */,
 			);
@@ -217,9 +251,40 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		AB486E6A2115F4900051802B /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				AB486E6F21160AE90051802B /* Realm */,
+				AB486E6B2115F4AD0051802B /* PersistenceProtocol.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		AB486E6F21160AE90051802B /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				AB486E7021160AFB0051802B /* RealmService.swift */,
+				AB486E72211610890051802B /* PersistenceProvider.swift */,
+				ABBA5E4A2116806C003063F4 /* Cacheable.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		AB486E762116325F0051802B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AB12B160210960C50067BCA7 /* NetworkServiceProvider.swift */,
+				AB486E77211632700051802B /* PipelineProtocol.swift */,
+				AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */,
+				ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		ABC2B98B2104DA80006E78F2 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
+				AB486E6A2115F4900051802B /* Lib */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -262,9 +327,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB15F01520FE7D0E001EE57D /* Build configuration list for PBXNativeTarget "LiteTests" */;
 			buildPhases = (
+				891D40A0086A91229FF5674C /* [CP] Check Pods Manifest.lock */,
 				AB15F00320FE7D0E001EE57D /* Sources */,
 				AB15F00420FE7D0E001EE57D /* Frameworks */,
 				AB15F00520FE7D0E001EE57D /* Resources */,
+				6AA15AB82DFA2BB402EC5CF4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -350,18 +417,52 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6AA15AB82DFA2BB402EC5CF4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../../Pods/Target Support Files/Pods-LiteTests/Pods-LiteTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../Pods/Target Support Files/Pods-LiteTests/Pods-LiteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		891D40A0086A91229FF5674C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LiteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AB02602A20FE859B00FDF3A3 /* Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
 			name = Lint;
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,15 +477,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB02602F20FE941200FDF3A3 /* PluginType.swift in Sources */,
+				AB486E6C2115F4AD0051802B /* PersistenceProtocol.swift in Sources */,
+				AB486E78211632700051802B /* PipelineProtocol.swift in Sources */,
 				AB15F01E20FE7F93001EE57D /* HTTPMethod.swift in Sources */,
 				AB15F01C20FE7EBF001EE57D /* Request.swift in Sources */,
+				AB486E73211610890051802B /* PersistenceProvider.swift in Sources */,
+				ABBA5E4D2117DF73003063F4 /* LiteServiceProvider.swift in Sources */,
+				AB486E7121160AFB0051802B /* RealmService.swift in Sources */,
 				AB0260362103894E00FDF3A3 /* DataOperation.swift in Sources */,
 				AB02604B2103F07600FDF3A3 /* Response.swift in Sources */,
 				AB02603821038BC400FDF3A3 /* URLRequest+Request.swift in Sources */,
 				AB0260322103888700FDF3A3 /* AsyncOperation.swift in Sources */,
+				ABBA5E4B2116806C003063F4 /* Cacheable.swift in Sources */,
+				AB486E6E2115F5B60051802B /* Future.swift in Sources */,
+				AB486E7A21166A9E0051802B /* RealmPersistedServiceProvider.swift in Sources */,
 				AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */,
 				AB02603A21038FBD00FDF3A3 /* NetworkOperation.swift in Sources */,
-				AB12B161210960C50067BCA7 /* ServiceProvider.swift in Sources */,
+				AB12B161210960C50067BCA7 /* NetworkServiceProvider.swift in Sources */,
 				AB02602C20FE92B800FDF3A3 /* Service.swift in Sources */,
 				AB0260452103A69400FDF3A3 /* RequestType.swift in Sources */,
 			);
@@ -395,8 +504,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB02604D2103F4FF00FDF3A3 /* HttpBinProvider.swift in Sources */,
+				ABBA5E4F2117EBAA003063F4 /* LiteServiceTest.swift in Sources */,
+				AB486E7C21166FF10051802B /* PersistedServiceTest.swift in Sources */,
 				AB02604F210402F700FDF3A3 /* Plugins.swift in Sources */,
-				AB0260432103A1A100FDF3A3 /* ServiceTests.swift in Sources */,
+				ABBA5E49211676A8003063F4 /* ResponseModel.swift in Sources */,
+				AB0260432103A1A100FDF3A3 /* NetworkServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +700,7 @@
 		};
 		AB15F01620FE7D0E001EE57D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51FA862E429BC827F3381C23 /* Pods-LiteTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -609,6 +722,7 @@
 		};
 		AB15F01720FE7D0E001EE57D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C9BD2FF526D8BC6C99C1145 /* Pods-LiteTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;

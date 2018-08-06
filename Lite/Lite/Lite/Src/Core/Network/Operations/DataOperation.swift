@@ -28,9 +28,9 @@ public final class DataOperation<Resource: Codable>: NetworkOperation<Resource> 
 
             if let error = error {
                 self.responseCallback.handler(.failure(error))
-            } else if let data = mutatedResponse.0, let response = mutatedResponse.1 {
+            } else if let data = mutatedResponse.0 {
                 let parsedData = try? Coder.decoder.decode(Resource.self, from: data)
-                self.responseCallback.handler(Response<Resource>.success(parsedData, (data, response)))
+                self.responseCallback.handler(Response<Resource>.success(parsedData))
             }
             self.state = .finished
         }
