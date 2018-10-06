@@ -43,10 +43,10 @@ class PersistedServiceDataTest: PersistedServiceTest {
         }
 
         try? realm.write {
-            realm.add(GetResponseRealm("https://httpbin.org/get"))
+            realm.add(GetResponseEntity("https://httpbin.org/get"))
         }
 
-        let getNoDataExpectation = expectation(description: "Called with respononse containing error for no data")
+        let getNoDataExpectation = expectation(description: "Called with response containing error for no data")
         provider.perform(.get) { response in
             if case let Response.success(data) = response {
                 XCTAssertNotNil(data)

@@ -32,8 +32,9 @@
 		AB486E78211632700051802B /* PipelineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E77211632700051802B /* PipelineProtocol.swift */; };
 		AB486E7A21166A9E0051802B /* RealmPersistedServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */; };
 		AB486E7C21166FF10051802B /* PersistedServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7B21166FF10051802B /* PersistedServiceTest.swift */; };
+		AB6C87B9216919EE00E8933A /* ComposableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C87B8216919EE00E8933A /* ComposableProvider.swift */; };
 		ABBA5E49211676A8003063F4 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E48211676A8003063F4 /* ResponseModel.swift */; };
-		ABBA5E4B2116806C003063F4 /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4A2116806C003063F4 /* Cacheable.swift */; };
+		ABBA5E4B2116806C003063F4 /* RealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4A2116806C003063F4 /* RealmEntity.swift */; };
 		ABBA5E4D2117DF73003063F4 /* LiteServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */; };
 		ABBA5E4F2117EBAA003063F4 /* LiteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4E2117EBAA003063F4 /* LiteServiceTest.swift */; };
 		BF5A405DB39F74C7972A19CB /* Pods_LiteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60EA7EC3710F1088CD1B8E71 /* Pods_LiteTests.framework */; };
@@ -81,8 +82,9 @@
 		AB486E77211632700051802B /* PipelineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineProtocol.swift; sourceTree = "<group>"; };
 		AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistedServiceProvider.swift; sourceTree = "<group>"; };
 		AB486E7B21166FF10051802B /* PersistedServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedServiceTest.swift; sourceTree = "<group>"; };
+		AB6C87B8216919EE00E8933A /* ComposableProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableProvider.swift; sourceTree = "<group>"; };
 		ABBA5E48211676A8003063F4 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
-		ABBA5E4A2116806C003063F4 /* Cacheable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
+		ABBA5E4A2116806C003063F4 /* RealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEntity.swift; sourceTree = "<group>"; };
 		ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteServiceProvider.swift; sourceTree = "<group>"; };
 		ABBA5E4E2117EBAA003063F4 /* LiteServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteServiceTest.swift; sourceTree = "<group>"; };
 		B03341468FD22A42F49B3C77 /* Pods-Lite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lite.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-Lite/Pods-Lite.debug.xcconfig"; sourceTree = "<group>"; };
@@ -265,7 +267,7 @@
 			children = (
 				AB486E7021160AFB0051802B /* RealmService.swift */,
 				AB486E72211610890051802B /* PersistenceProvider.swift */,
-				ABBA5E4A2116806C003063F4 /* Cacheable.swift */,
+				ABBA5E4A2116806C003063F4 /* RealmEntity.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -277,6 +279,7 @@
 				AB486E77211632700051802B /* PipelineProtocol.swift */,
 				AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */,
 				ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */,
+				AB6C87B8216919EE00E8933A /* ComposableProvider.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -488,7 +491,8 @@
 				AB02604B2103F07600FDF3A3 /* Response.swift in Sources */,
 				AB02603821038BC400FDF3A3 /* URLRequest+Request.swift in Sources */,
 				AB0260322103888700FDF3A3 /* AsyncOperation.swift in Sources */,
-				ABBA5E4B2116806C003063F4 /* Cacheable.swift in Sources */,
+				ABBA5E4B2116806C003063F4 /* RealmEntity.swift in Sources */,
+				AB6C87B9216919EE00E8933A /* ComposableProvider.swift in Sources */,
 				AB486E6E2115F5B60051802B /* Future.swift in Sources */,
 				AB486E7A21166A9E0051802B /* RealmPersistedServiceProvider.swift in Sources */,
 				AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */,

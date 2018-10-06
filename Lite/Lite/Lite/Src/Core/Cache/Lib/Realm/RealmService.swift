@@ -38,7 +38,7 @@ extension RealmService: PersistenceProtocol {
             handler.handle(.failure(PersistenceError.failedInitializingRealm))
     }
 
-    public func save<PersistedResource, Resource>(_ data: Resource)
+    public func save<PersistedResource, Resource>(_ data: Resource, _ handler: VoidSaveBlock? = nil)
         where PersistedResource == Resource.PersistedResource, Resource: TranslatorProtocol {
         do {
             try service?.write {
@@ -46,8 +46,10 @@ extension RealmService: PersistenceProtocol {
                     service?.add(realmData)
                 }
             }
+            handler?()
         } catch {
             print(error)
+            handler?()
         }
     }
 }

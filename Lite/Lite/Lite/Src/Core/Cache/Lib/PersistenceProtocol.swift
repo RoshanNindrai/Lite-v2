@@ -9,6 +9,8 @@
 import Foundation
 import RealmSwift
 
+public typealias VoidSaveBlock = () -> Void
+
 public enum PersistenceError: Error {
     case failedInitializingRealm
     case noDataFound
@@ -25,8 +27,8 @@ public protocol PersistenceProtocol {
     func fetch<PersistedResource, Resource: TranslatorProtocol>(_ predicate: NSPredicate,
                                                                 _ handler: ResponseCallback<Resource>)
         where Resource.PersistedResource == PersistedResource
-    
-    func save<PersistedResource, Resource>(_ data: Resource)
+
+    func save<PersistedResource, Resource>(_ data: Resource, _ handler: VoidSaveBlock?)
         where PersistedResource == Resource.PersistedResource, Resource: TranslatorProtocol
-    
+
 }

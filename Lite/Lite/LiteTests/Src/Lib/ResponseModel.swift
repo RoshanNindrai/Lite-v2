@@ -36,7 +36,7 @@ struct GetResponse: Codable {
 }
 
 @objcMembers
-public class GetResponseRealm: Cacheable {
+public class GetResponseEntity: RealmEntity {
     dynamic var url: String?
     convenience init(_ url: String) {
         self.init()
@@ -46,12 +46,12 @@ public class GetResponseRealm: Cacheable {
 
 extension GetResponse: TranslatorProtocol {
 
-    static func reverseTranslate(_ data: GetResponse) -> GetResponseRealm? {
-        return GetResponseRealm.init(data.url?.absoluteString ?? "No url found")
+    static func reverseTranslate(_ data: GetResponse) -> GetResponseEntity? {
+        return GetResponseEntity(data.url?.absoluteString ?? "No url found")
     }
 
-    typealias PersistedResource = GetResponseRealm
-    static func translate(_ data: GetResponseRealm) -> GetResponse? {
+    typealias PersistedResource = GetResponseEntity
+    static func translate(_ data: GetResponseEntity) -> GetResponse? {
         return GetResponse(args: nil, headers: nil, origin: nil, form: nil, url: URL(string: data.url ?? ""))
     }
 

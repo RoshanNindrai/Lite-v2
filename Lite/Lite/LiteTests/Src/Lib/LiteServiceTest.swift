@@ -29,7 +29,7 @@ class LiteServiceTest: PersistedServiceTest {
         }
 
         try? realm.write {
-            realm.add(GetResponseRealm("https://httpbin.org/get"))
+            realm.add(GetResponseEntity("https://httpbin.org/get"))
         }
 
         liteService.perform(.get) { response in
@@ -50,10 +50,17 @@ class LiteServiceTest: PersistedServiceTest {
             return
         }
 
+        XCTAssertNil(realm.objects(GetResponseEntity.self).filter(HttpBin.get.predicate).first)
+        // from server
         liteService.perform(.get) { [realm] response in
-            print(response)
-            //XCTAssertNotNil(realm.objects(GetResponseRealm.self).filter("url == %@", "https://httpbin.org/get"))
-            liteExpectation.fulfill()
+            // from memory
+            self.liteService.perform(.get) { [realm] response in
+                DispatchQueue.main.async {
+                    print(response)
+                    XCTAssertNotNil(realm.objects(GetResponseEntity.self).filter(HttpBin.get.predicate).first)
+                    liteExpectation.fulfill()
+                }
+            }
         }
 
         waitForExpectations(timeout: 10, handler: nil)

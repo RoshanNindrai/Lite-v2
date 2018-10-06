@@ -14,7 +14,7 @@ public protocol PersistedServiceProviderProtocol: Provider {
     associatedtype Resource: TranslatorProtocol
     var persistence: PersistenceProtocol { get }
 
-    func save(_ data: Resource)
+    func save(_ data: Resource, _ handler: VoidSaveBlock?)
 
 }
 
@@ -41,8 +41,8 @@ extension PersistedServiceProvider {
         })
     }
 
-    public func save(_ data: Resource) {
-        persistence.save(data)
+    public func save(_ data: Resource, _ handler: VoidSaveBlock? = nil) {
+        persistence.save(data, handler)
     }
 
 }

@@ -10,7 +10,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-public class Cacheable: Object {
+public class RealmEntity: Object {
     required init() {
         super.init()
     }
