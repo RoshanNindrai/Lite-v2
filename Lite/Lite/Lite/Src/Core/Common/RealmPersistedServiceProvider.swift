@@ -9,21 +9,26 @@
 import Foundation
 import Realm
 
-public protocol PersistedServiceProviderProtocol: Provider {
-
-    associatedtype Resource: TranslatorProtocol
+public protocol PersistedServiceProviderProtocol: PipeLine {
     var persistence: PersistenceProtocol { get }
 
     func save(_ data: Resource, _ handler: VoidSaveBlock?)
-
 }
 
 public struct PersistedServiceProvider<ServiceProviderType: ProviderType & PersistenceProviderType,
 Resource: Codable & TranslatorProtocol>: PersistedServiceProviderProtocol {
+
     public var persistence: PersistenceProtocol
+    public var getter: ((ServiceProviderType, ResponseCallback<Resource>) -> Void)?
 
     public init(configuration: RLMRealmConfiguration = RLMRealmConfiguration.default()) {
         self.persistence = RealmService(configuration)
+
+    }
+
+    public init(getter: @escaping (ServiceProviderType, ResponseCallback<Resource>) -> Void) {
+        persistence = RealmService(RLMRealmConfiguration.default())
+        self.getter = getter
     }
 }
 

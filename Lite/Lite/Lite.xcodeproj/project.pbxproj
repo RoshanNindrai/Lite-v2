@@ -32,7 +32,6 @@
 		AB486E78211632700051802B /* PipelineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E77211632700051802B /* PipelineProtocol.swift */; };
 		AB486E7A21166A9E0051802B /* RealmPersistedServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */; };
 		AB486E7C21166FF10051802B /* PersistedServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7B21166FF10051802B /* PersistedServiceTest.swift */; };
-		AB6C87B9216919EE00E8933A /* ComposableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C87B8216919EE00E8933A /* ComposableProvider.swift */; };
 		ABBA5E49211676A8003063F4 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E48211676A8003063F4 /* ResponseModel.swift */; };
 		ABBA5E4B2116806C003063F4 /* RealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4A2116806C003063F4 /* RealmEntity.swift */; };
 		ABBA5E4D2117DF73003063F4 /* LiteServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */; };
@@ -82,7 +81,6 @@
 		AB486E77211632700051802B /* PipelineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineProtocol.swift; sourceTree = "<group>"; };
 		AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistedServiceProvider.swift; sourceTree = "<group>"; };
 		AB486E7B21166FF10051802B /* PersistedServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedServiceTest.swift; sourceTree = "<group>"; };
-		AB6C87B8216919EE00E8933A /* ComposableProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableProvider.swift; sourceTree = "<group>"; };
 		ABBA5E48211676A8003063F4 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		ABBA5E4A2116806C003063F4 /* RealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEntity.swift; sourceTree = "<group>"; };
 		ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteServiceProvider.swift; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 				AB486E77211632700051802B /* PipelineProtocol.swift */,
 				AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */,
 				ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */,
-				AB6C87B8216919EE00E8933A /* ComposableProvider.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -492,7 +489,6 @@
 				AB02603821038BC400FDF3A3 /* URLRequest+Request.swift in Sources */,
 				AB0260322103888700FDF3A3 /* AsyncOperation.swift in Sources */,
 				ABBA5E4B2116806C003063F4 /* RealmEntity.swift in Sources */,
-				AB6C87B9216919EE00E8933A /* ComposableProvider.swift in Sources */,
 				AB486E6E2115F5B60051802B /* Future.swift in Sources */,
 				AB486E7A21166A9E0051802B /* RealmPersistedServiceProvider.swift in Sources */,
 				AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */,

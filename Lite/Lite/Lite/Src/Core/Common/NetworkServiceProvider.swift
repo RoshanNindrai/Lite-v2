@@ -10,26 +10,27 @@ import Foundation
 
 public protocol Provider {
     associatedtype ServiceProviderType: ProviderType
-    associatedtype ResponseType: Codable
-    func perform(_ provider: ServiceProviderType,
-                 _ responseCallback: @escaping (Response<ResponseType>) -> Void)
+    associatedtype Resource: Codable
 }
 
-public protocol NetworkProviderProtocol: Provider {
-    var service: Service { get }
-}
+public struct NetworkServiceProvider<ServiceProviderType: ProviderType, Resource: Codable>: PipeLine {
 
-public struct NetworkServiceProvider<ServiceProviderType: ProviderType, ResponseType: Codable>: Provider {
     public var service: Service
+    public var getter: ((ServiceProviderType, ResponseCallback<Resource>) -> Void)?
 
     public init(service: Service = Service.shared) {
         self.service = service
+    }
+
+    public init(getter: @escaping (ServiceProviderType, ResponseCallback<Resource>) -> Void) {
+        self.service = Service.shared
+        self.getter = getter
     }
 }
 
 extension NetworkServiceProvider {
     public func perform(_ provider: ServiceProviderType,
-                        _ responseCallback: @escaping (Response<ResponseType>) -> Void) {
-        service.perform(provider, ResponseCallback<ResponseType>(handler: responseCallback))
+                        _ responseCallback: @escaping (Response<Resource>) -> Void) {
+        service.perform(provider, ResponseCallback<Resource>(handler: responseCallback))
     }
 }

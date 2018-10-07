@@ -8,13 +8,62 @@
 
 import Foundation
 
-public protocol PipeLine {
-    associatedtype Resource: Codable
+precedencegroup ComposePredecesor {
+    associativity: left
+}
 
-    var getter: (Request<Resource>) -> ResponseCallback<Resource> { get set }
-    var setter: (Request<Resource>, Resource) -> Void { get set }
+infix operator |&: ComposePredecesor
 
-    init(getter: (Request<Resource>) -> ResponseCallback<Resource>,
-         setter: (Request<Resource>, Resource) -> Void)
+func |&<A: PipeLine, B: PipeLine>(_ left: A, _ right: B) -> A where A.Resource == B.Resource,
+    A.ServiceProviderType == B.ServiceProviderType {
+    return left.compose(right)
+}
 
+public protocol PipeLine: Provider {
+    var getter: ((ServiceProviderType, ResponseCallback<Resource>) -> Void)? { get set  }
+
+    init(getter: @escaping (ServiceProviderType, ResponseCallback<Resource>) -> Void)
+
+    func perform(_ provider: ServiceProviderType,
+                 _ responseCallback: @escaping (Response<Resource>) -> Void)
+    func save(_ data: Resource, _ handler: VoidSaveBlock?)
+}
+
+extension PipeLine {
+    public func save(_ data: Resource, _ handler: VoidSaveBlock?) {
+        // Save might not be required to be implemented for example network layer
+    }
+}
+
+extension PipeLine {
+    func compose<Pipe: PipeLine>(_ second: Pipe) -> Self where Pipe.Resource == Self.Resource,
+        Pipe.ServiceProviderType == Self.ServiceProviderType {
+            return Self.init(getter: { provider, callback in
+                self.perform(provider) { response in
+                    switch response {
+                    case .failure:
+                        second.perform(provider) { response in
+                            switch response {
+                            case .success(let resource):
+                                guard let resource = resource else {
+                                    callback.handle(response)
+                                    return
+                                }
+                                self.save(resource, nil)
+                                callback.handle(response)
+                            default:
+                                callback.handle(response)
+                            }
+                        }
+                    case .success:
+                        callback.handle(response)
+                    }
+                }
+            })
+    }
+
+    func execute(_ provider: ServiceProviderType,
+                 _ responseCallback: @escaping (Response<Resource>) -> Void) {
+        getter?(provider, ResponseCallback(handler: responseCallback))
+    }
 }

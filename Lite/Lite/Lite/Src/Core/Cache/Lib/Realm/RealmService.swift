@@ -41,6 +41,7 @@ extension RealmService: PersistenceProtocol {
     public func save<PersistedResource, Resource>(_ data: Resource, _ handler: VoidSaveBlock? = nil)
         where PersistedResource == Resource.PersistedResource, Resource: TranslatorProtocol {
         do {
+            service = try Realm()
             try service?.write {
                 if let realmData = Resource.reverseTranslate(data) {
                     service?.add(realmData)

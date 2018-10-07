@@ -56,7 +56,6 @@ class LiteServiceTest: PersistedServiceTest {
             // from memory
             self.liteService.perform(.get) { [realm] response in
                 DispatchQueue.main.async {
-                    print(response)
                     XCTAssertNotNil(realm.objects(GetResponseEntity.self).filter(HttpBin.get.predicate).first)
                     liteExpectation.fulfill()
                 }
