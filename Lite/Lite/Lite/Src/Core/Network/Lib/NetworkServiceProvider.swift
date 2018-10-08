@@ -8,14 +8,9 @@
 
 import Foundation
 
-public protocol Provider {
-    associatedtype ServiceProviderType: ProviderType
-    associatedtype Resource: Codable
-}
-
 public struct NetworkServiceProvider<ServiceProviderType: ProviderType, Resource: Codable>: PipeLine {
 
-    public var service: Service
+    private let service: Service
     public var getter: ((ServiceProviderType, ResponseCallback<Resource>) -> Void)?
 
     public init(service: Service = Service.shared) {

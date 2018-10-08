@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 public typealias VoidSaveBlock = () -> Void
 
@@ -18,17 +17,16 @@ public enum PersistenceError: Error {
 }
 
 public protocol TranslatorProtocol {
-    associatedtype PersistedResource: Object
+    associatedtype PersistedResource: NSObject
     static func translate(_ data: PersistedResource) -> Self?
     static func reverseTranslate(_ data: Self) -> PersistedResource?
 }
 
 public protocol PersistenceProtocol {
-    func fetch<PersistedResource, Resource: TranslatorProtocol>(_ predicate: NSPredicate,
-                                                                _ handler: ResponseCallback<Resource>)
-        where Resource.PersistedResource == PersistedResource
+    func fetch<Resource>(_ predicate: NSPredicate,
+                         _ handler: ResponseCallback<Resource>)
+        where Resource: TranslatorProtocol
 
-    func save<PersistedResource, Resource>(_ data: Resource, _ handler: VoidSaveBlock?)
-        where PersistedResource == Resource.PersistedResource, Resource: TranslatorProtocol
-
+    func save<Resource>(_ data: Resource, _ handler: VoidSaveBlock?)
+        where Resource: TranslatorProtocol
 }

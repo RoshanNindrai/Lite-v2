@@ -8,22 +8,21 @@
 
 import Foundation
 
-precedencegroup ComposePredecesor {
-    associativity: left
-}
-
-infix operator |&: ComposePredecesor
-
-func |&<A: PipeLine, B: PipeLine>(_ left: A, _ right: B) -> A where A.Resource == B.Resource,
-    A.ServiceProviderType == B.ServiceProviderType {
-    return left.compose(right)
-}
-
 public protocol PipeLine: Provider {
+
+    /// Variables
     var getter: ((ServiceProviderType, ResponseCallback<Resource>) -> Void)? { get set  }
 
+    /// Initializes a pipeline with getter that is being used for composing
+    ///
+    /// - Parameter getter: The getter that gets called as part of fallback
     init(getter: @escaping (ServiceProviderType, ResponseCallback<Resource>) -> Void)
 
+    /// This method is called within the getter to perform fetching of provider requested data
+    ///
+    /// - Parameters:
+    ///   - provider: The provider for which the perform fetch is performed
+    ///   - responseCallback: The method that gets fired when the perform action is completed in async way.
     func perform(_ provider: ServiceProviderType,
                  _ responseCallback: @escaping (Response<Resource>) -> Void)
     func save(_ data: Resource, _ handler: VoidSaveBlock?)

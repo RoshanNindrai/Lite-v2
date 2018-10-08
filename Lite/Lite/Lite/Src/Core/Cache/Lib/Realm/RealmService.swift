@@ -23,16 +23,15 @@ public final class RealmService {
 }
 
 extension RealmService: PersistenceProtocol {
-    public func fetch<PersistedResource, Resource>(_ predicate: NSPredicate,
-                                                   _ handler: ResponseCallback<Resource>)
-        where PersistedResource == Resource.PersistedResource, Resource: TranslatorProtocol {
-            if let realm = service {
-                let persistedData = realm.objects(PersistedResource.self).filter(predicate)
-                guard let resource = persistedData.first else {
+    public func fetch<Resource>(_ predicate: NSPredicate, _ handler: ResponseCallback<Resource>)
+        where Resource: TranslatorProtocol {
+            if let realm = service, let RealmResourceType = Resource.PersistedResource.self as? Object.Type {
+                let persistedData = realm.objects(RealmResourceType).filter(predicate)
+                guard let resource = persistedData.first as? Resource.PersistedResource else {
                     handler.handle(.failure(PersistenceError.noDataFound))
                     return
                 }
-                handler.handle(.success(Resource.translate(resource)))
+                handler.handle(Response.success(Resource.translate(resource)))
                 return
             }
             handler.handle(.failure(PersistenceError.failedInitializingRealm))
@@ -43,7 +42,7 @@ extension RealmService: PersistenceProtocol {
         do {
             service = try Realm()
             try service?.write {
-                if let realmData = Resource.reverseTranslate(data) {
+                if let realmData = Resource.reverseTranslate(data) as? Object {
                     service?.add(realmData)
                 }
             }

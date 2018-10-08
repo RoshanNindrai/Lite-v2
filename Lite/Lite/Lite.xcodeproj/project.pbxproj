@@ -16,7 +16,7 @@
 		AB02603A21038FBD00FDF3A3 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02603921038FBD00FDF3A3 /* NetworkOperation.swift */; };
 		AB0260432103A1A100FDF3A3 /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260422103A1A100FDF3A3 /* NetworkServiceTest.swift */; };
 		AB0260452103A69400FDF3A3 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260442103A69400FDF3A3 /* RequestType.swift */; };
-		AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260482103EBCF00FDF3A3 /* Provider.swift */; };
+		AB0260492103EBCF00FDF3A3 /* ProviderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0260482103EBCF00FDF3A3 /* ProviderType.swift */; };
 		AB02604B2103F07600FDF3A3 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02604A2103F07600FDF3A3 /* Response.swift */; };
 		AB02604D2103F4FF00FDF3A3 /* HttpBinProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02604C2103F4FF00FDF3A3 /* HttpBinProvider.swift */; };
 		AB02604F210402F700FDF3A3 /* Plugins.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02604E210402F700FDF3A3 /* Plugins.swift */; };
@@ -29,9 +29,11 @@
 		AB486E6E2115F5B60051802B /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E6D2115F5B60051802B /* Future.swift */; };
 		AB486E7121160AFB0051802B /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7021160AFB0051802B /* RealmService.swift */; };
 		AB486E73211610890051802B /* PersistenceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E72211610890051802B /* PersistenceProvider.swift */; };
-		AB486E78211632700051802B /* PipelineProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E77211632700051802B /* PipelineProtocol.swift */; };
+		AB486E78211632700051802B /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E77211632700051802B /* Pipeline.swift */; };
 		AB486E7A21166A9E0051802B /* RealmPersistedServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */; };
 		AB486E7C21166FF10051802B /* PersistedServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB486E7B21166FF10051802B /* PersistedServiceTest.swift */; };
+		AB6C87BB216A8FB000E8933A /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C87BA216A8FB000E8933A /* Provider.swift */; };
+		AB6C87BD216A904500E8933A /* Composable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C87BC216A904500E8933A /* Composable.swift */; };
 		ABBA5E49211676A8003063F4 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E48211676A8003063F4 /* ResponseModel.swift */; };
 		ABBA5E4B2116806C003063F4 /* RealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4A2116806C003063F4 /* RealmEntity.swift */; };
 		ABBA5E4D2117DF73003063F4 /* LiteServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */; };
@@ -62,7 +64,7 @@
 		AB02603921038FBD00FDF3A3 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		AB0260422103A1A100FDF3A3 /* NetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTest.swift; sourceTree = "<group>"; };
 		AB0260442103A69400FDF3A3 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
-		AB0260482103EBCF00FDF3A3 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		AB0260482103EBCF00FDF3A3 /* ProviderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderType.swift; sourceTree = "<group>"; };
 		AB02604A2103F07600FDF3A3 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		AB02604C2103F4FF00FDF3A3 /* HttpBinProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBinProvider.swift; sourceTree = "<group>"; };
 		AB02604E210402F700FDF3A3 /* Plugins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugins.swift; sourceTree = "<group>"; };
@@ -78,9 +80,11 @@
 		AB486E6D2115F5B60051802B /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		AB486E7021160AFB0051802B /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		AB486E72211610890051802B /* PersistenceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceProvider.swift; sourceTree = "<group>"; };
-		AB486E77211632700051802B /* PipelineProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineProtocol.swift; sourceTree = "<group>"; };
+		AB486E77211632700051802B /* Pipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipeline.swift; sourceTree = "<group>"; };
 		AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistedServiceProvider.swift; sourceTree = "<group>"; };
 		AB486E7B21166FF10051802B /* PersistedServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedServiceTest.swift; sourceTree = "<group>"; };
+		AB6C87BA216A8FB000E8933A /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		AB6C87BC216A904500E8933A /* Composable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composable.swift; sourceTree = "<group>"; };
 		ABBA5E48211676A8003063F4 /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		ABBA5E4A2116806C003063F4 /* RealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEntity.swift; sourceTree = "<group>"; };
 		ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteServiceProvider.swift; sourceTree = "<group>"; };
@@ -143,12 +147,13 @@
 		AB0260332103892600FDF3A3 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				AB12B160210960C50067BCA7 /* NetworkServiceProvider.swift */,
 				AB15F01B20FE7EBF001EE57D /* Request.swift */,
 				AB15F01D20FE7F93001EE57D /* HTTPMethod.swift */,
 				AB02602B20FE92B800FDF3A3 /* Service.swift */,
 				AB02602E20FE941200FDF3A3 /* PluginType.swift */,
 				AB0260442103A69400FDF3A3 /* RequestType.swift */,
-				AB0260482103EBCF00FDF3A3 /* Provider.swift */,
+				AB0260482103EBCF00FDF3A3 /* ProviderType.swift */,
 				AB02604A2103F07600FDF3A3 /* Response.swift */,
 			);
 			path = Lib;
@@ -263,6 +268,7 @@
 		AB486E6F21160AE90051802B /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */,
 				AB486E7021160AFB0051802B /* RealmService.swift */,
 				AB486E72211610890051802B /* PersistenceProvider.swift */,
 				ABBA5E4A2116806C003063F4 /* RealmEntity.swift */,
@@ -273,9 +279,9 @@
 		AB486E762116325F0051802B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				AB12B160210960C50067BCA7 /* NetworkServiceProvider.swift */,
-				AB486E77211632700051802B /* PipelineProtocol.swift */,
-				AB486E7921166A9E0051802B /* RealmPersistedServiceProvider.swift */,
+				AB6C87BA216A8FB000E8933A /* Provider.swift */,
+				AB486E77211632700051802B /* Pipeline.swift */,
+				AB6C87BC216A904500E8933A /* Composable.swift */,
 				ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */,
 			);
 			path = Common;
@@ -478,8 +484,9 @@
 			files = (
 				AB02602F20FE941200FDF3A3 /* PluginType.swift in Sources */,
 				AB486E6C2115F4AD0051802B /* PersistenceProtocol.swift in Sources */,
-				AB486E78211632700051802B /* PipelineProtocol.swift in Sources */,
+				AB486E78211632700051802B /* Pipeline.swift in Sources */,
 				AB15F01E20FE7F93001EE57D /* HTTPMethod.swift in Sources */,
+				AB6C87BD216A904500E8933A /* Composable.swift in Sources */,
 				AB15F01C20FE7EBF001EE57D /* Request.swift in Sources */,
 				AB486E73211610890051802B /* PersistenceProvider.swift in Sources */,
 				ABBA5E4D2117DF73003063F4 /* LiteServiceProvider.swift in Sources */,
@@ -491,7 +498,8 @@
 				ABBA5E4B2116806C003063F4 /* RealmEntity.swift in Sources */,
 				AB486E6E2115F5B60051802B /* Future.swift in Sources */,
 				AB486E7A21166A9E0051802B /* RealmPersistedServiceProvider.swift in Sources */,
-				AB0260492103EBCF00FDF3A3 /* Provider.swift in Sources */,
+				AB0260492103EBCF00FDF3A3 /* ProviderType.swift in Sources */,
+				AB6C87BB216A8FB000E8933A /* Provider.swift in Sources */,
 				AB02603A21038FBD00FDF3A3 /* NetworkOperation.swift in Sources */,
 				AB12B161210960C50067BCA7 /* NetworkServiceProvider.swift in Sources */,
 				AB02602C20FE92B800FDF3A3 /* Service.swift in Sources */,
