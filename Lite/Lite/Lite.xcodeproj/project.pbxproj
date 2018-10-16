@@ -231,6 +231,7 @@
 		AB15F01820FE7D51001EE57D /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				AB9C152321760AE000096982 /* provider */,
 				AB0260302103887000FDF3A3 /* Utils */,
 				AB15F01920FE7DA7001EE57D /* Core */,
 			);
@@ -282,9 +283,16 @@
 				AB6C87BA216A8FB000E8933A /* Provider.swift */,
 				AB486E77211632700051802B /* Pipeline.swift */,
 				AB6C87BC216A904500E8933A /* Composable.swift */,
-				ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		AB9C152321760AE000096982 /* provider */ = {
+			isa = PBXGroup;
+			children = (
+				ABBA5E4C2117DF73003063F4 /* LiteServiceProvider.swift */,
+			);
+			path = provider;
 			sourceTree = "<group>";
 		};
 		ABC2B98B2104DA80006E78F2 /* Cache */ = {
