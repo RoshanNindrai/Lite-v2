@@ -62,8 +62,8 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  #s.platform     = :ios
+  s.platform     = :ios, "10.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -89,10 +89,24 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Src", "Lite/Lite/Lite/**/*"
-  # s.exclude_files = "Classes/Exclude"
-  s.public_header_files = "Lite/Lite/Lite/**/*.h"
+  # ――― Subspecs ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  
+  s.subspec 'Core' do |core|
+    core.source_files = 'Lite/Lite/Lite/Src/provider/**/*.swift'
+    core.dependency 'Lite/Network'
+    core.dependency 'Lite/Persistence'
+  end
 
+  s.subspec 'Network' do |network|
+    network.source_files = 'Lite/Lite/Lite/Src/**/*.swift'
+    network.exclude_files = "Lite/Lite/Lite/Src/provider/**/*.swift", "Lite/Lite/Lite/Src/Core/Cache/**/*.swift"
+  end
+
+  s.subspec 'Persistence' do |persistence|
+    persistence.source_files = 'Lite/Lite/Lite/Src/**/*.swift'
+    persistence.exclude_files = "Lite/Lite/Lite/Src/provider/**/*.swift", "Lite/Lite/Lite/Src/Core/Network/**/*.swift"
+    persistence.dependency 'RealmSwift', '3.7.4'
+  end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -127,9 +141,9 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  s.swift_version = "4.2"
 
 end

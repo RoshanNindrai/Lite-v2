@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias VoidSaveBlock = () -> Void
+
 public protocol PipeLine: Provider {
 
     /// Variables

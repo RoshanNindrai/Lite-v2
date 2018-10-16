@@ -8,8 +8,6 @@
 
 import Foundation
 
-public typealias VoidSaveBlock = () -> Void
-
 public enum PersistenceError: Error {
     case failedInitializingRealm
     case noDataFound
