@@ -9,7 +9,6 @@
 import Foundation
 
 public typealias JSONDictionary = [String: AnyObject]
-public typealias Header = [String: String]
 
 /// This struct is used to represent a resource
 public struct Request<Resource: Codable> {

@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias Header = [String: String]
+
 public protocol ProviderType {
 
     var baseURL: String { get }

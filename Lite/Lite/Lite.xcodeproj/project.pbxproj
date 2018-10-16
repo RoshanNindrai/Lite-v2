@@ -149,7 +149,6 @@
 				AB02603721038BC400FDF3A3 /* URLRequest+Request.swift */,
 				AB12B160210960C50067BCA7 /* NetworkServiceProvider.swift */,
 				AB15F01B20FE7EBF001EE57D /* Request.swift */,
-				AB15F01D20FE7F93001EE57D /* HTTPMethod.swift */,
 				AB02602B20FE92B800FDF3A3 /* Service.swift */,
 				AB02602E20FE941200FDF3A3 /* PluginType.swift */,
 			);
@@ -277,6 +276,7 @@
 		AB486E762116325F0051802B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AB15F01D20FE7F93001EE57D /* HTTPMethod.swift */,
 				AB0260442103A69400FDF3A3 /* RequestType.swift */,
 				AB0260482103EBCF00FDF3A3 /* ProviderType.swift */,
 				AB02604A2103F07600FDF3A3 /* Response.swift */,
