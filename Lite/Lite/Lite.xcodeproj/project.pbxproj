@@ -138,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				AB0260312103888700FDF3A3 /* AsyncOperation.swift */,
-				AB02603721038BC400FDF3A3 /* URLRequest+Request.swift */,
 				AB486E6D2115F5B60051802B /* Future.swift */,
 			);
 			path = Utils;
@@ -147,6 +146,7 @@
 		AB0260332103892600FDF3A3 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				AB02603721038BC400FDF3A3 /* URLRequest+Request.swift */,
 				AB12B160210960C50067BCA7 /* NetworkServiceProvider.swift */,
 				AB15F01B20FE7EBF001EE57D /* Request.swift */,
 				AB15F01D20FE7F93001EE57D /* HTTPMethod.swift */,

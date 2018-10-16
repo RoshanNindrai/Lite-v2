@@ -11,22 +11,6 @@ import Realm
 import RealmSwift
 @testable import Lite
 
-/*
- 
- "args": {},
- "headers": {
- "Accept": "",
- "Accept-Encoding": "gzip, deflate",
- "Cache-Control": "no-cache",
- "Connection": "close",
- "Host": "httpbin.org",
- "Postman-Token": "0fdfb915-2a4a-4580-98eb-9f237a98bcda",
- "User-Agent": "PostmanRuntime/7.1.1"
- },
- "origin": "108.69.132.164",
- "url": "https://httpbin.org/get"
- 
- */
 struct GetResponse: Codable {
     let args: [String: String]?
     let headers: [String: String]?
@@ -45,12 +29,13 @@ public class GetResponseEntity: RealmEntity {
 }
 
 extension GetResponse: TranslatorProtocol {
+    
+    typealias PersistedResource = GetResponseEntity
 
     static func reverseTranslate(_ data: GetResponse) -> GetResponseEntity? {
         return GetResponseEntity(data.url?.absoluteString ?? "No url found")
     }
-
-    typealias PersistedResource = GetResponseEntity
+    
     static func translate(_ data: GetResponseEntity) -> GetResponse? {
         return GetResponse(args: nil, headers: nil, origin: nil, form: nil, url: URL(string: data.url ?? ""))
     }
