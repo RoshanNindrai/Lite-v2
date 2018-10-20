@@ -8,20 +8,21 @@
 
 import Foundation
 
-public enum State: String {
-    case ready, executing, finished
-
-    var keyPath: String {
-        return isPrefixed()
-    }
-
-    private func isPrefixed() -> String {
-        return "is" + rawValue.capitalized
-    }
-}
-
 public class AsyncOperation: Operation {
 
+    public enum State: String {
+        case ready, executing, finished
+        
+        var keyPath: String {
+            return isPrefixed()
+        }
+        
+        private func isPrefixed() -> String {
+            return "is" + rawValue.capitalized
+        }
+    }
+
+    
     override public var isAsynchronous: Bool { return true }
 
     public var state: State = .ready {

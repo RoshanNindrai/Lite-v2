@@ -10,16 +10,16 @@ import Foundation
 import Realm
 import RealmSwift
 
-public class RealmEntity: Object {
+open class RealmEntity: Object {
     required init() {
         super.init()
     }
 
-    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+    required public init(realm: RLMRealm, schema: RLMObjectSchema) {
         super.init(realm: realm, schema: schema)
     }
 
-    required init(value: Any, schema: RLMSchema) {
+    required public init(value: Any, schema: RLMSchema) {
         super.init(value: value, schema: schema)
     }
 }

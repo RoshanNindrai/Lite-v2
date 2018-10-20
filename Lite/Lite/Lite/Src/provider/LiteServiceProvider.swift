@@ -27,7 +27,7 @@ public final class LiteServiceProvider<Service: ProviderType & PersistenceProvid
 
 }
 
-extension LiteServiceProvider {
+public extension LiteServiceProvider {
     func perform(_ provider: Service, _ responseCallback: @escaping (Response<ResponseType>) -> Void) {
         let persistence = PersistedServiceProvider<Service, ResponseType>(configuration: configuration)
         let composedServiceProvider = persistence |& network
