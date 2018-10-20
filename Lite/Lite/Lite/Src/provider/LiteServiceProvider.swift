@@ -9,7 +9,7 @@
 import Foundation
 import Realm
 
-final class LiteServiceProvider<Service: ProviderType & PersistenceProviderType,
+public final class LiteServiceProvider<Service: ProviderType & PersistenceProviderType,
                                 ResponseType: Codable & TranslatorProtocol> {
 
     let network: NetworkServiceProvider<Service, ResponseType>
@@ -19,6 +19,10 @@ final class LiteServiceProvider<Service: ProviderType & PersistenceProviderType,
                 _ configuration: RLMRealmConfiguration) {
         self.network = network
         self.configuration = configuration
+    }
+
+    convenience public init() {
+        self.init(NetworkServiceProvider(), RLMRealmConfiguration.default())
     }
 
 }
