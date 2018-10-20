@@ -11,7 +11,7 @@ import Realm
 import RealmSwift
 
 open class RealmEntity: Object {
-    required init() {
+    required public init() {
         super.init()
     }
 
