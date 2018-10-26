@@ -14,7 +14,7 @@ precedencegroup ComposePredecesor {
 
 infix operator |&: ComposePredecesor
 
-func |&<A: PipeLine, B: PipeLine>(_ left: A, _ right: B) -> A where A.Resource == B.Resource,
+public func |&<A: PipeLine, B: PipeLine>(_ left: A, _ right: B) -> A where A.Resource == B.Resource,
     A.ServiceProviderType == B.ServiceProviderType {
         return left.compose(right)
 }

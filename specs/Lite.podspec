@@ -95,6 +95,7 @@ Pod::Spec.new do |s|
     core.source_files = 'Lite/Lite/Lite/Src/provider/**/*.swift'
     core.dependency 'Lite/Network'
     core.dependency 'Lite/Persistence'
+    s.dependency  'PromiseKit', '6.5.2'
   end
 
   s.subspec 'Network' do |network|

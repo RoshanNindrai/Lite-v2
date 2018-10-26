@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import PromiseKit
 import RealmSwift
 @testable import Lite
 
@@ -39,6 +40,18 @@ class LiteServiceTest: PersistedServiceTest {
 
         waitForExpectations(timeout: 10, handler: nil)
 
+    }
+
+    func testRequestChaining() {
+
+        let litePromiseExpectation = expectation(description: "Promise")
+        firstly {
+            liteService.perform(.get)
+        }.then { [unowned self] result -> Promise<GetResponse?> in
+            litePromiseExpectation.fulfill()
+            return self.liteService.perform(.get)
+        }
+        waitForExpectations(timeout: 10, handler: nil)
     }
 
     func testFromNetwork() {

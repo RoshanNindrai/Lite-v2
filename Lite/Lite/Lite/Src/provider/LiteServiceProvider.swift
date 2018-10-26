@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import PromiseKit
 import Realm
 
+public typealias LiteResponseType = Codable & TranslatorProtocol
 public final class LiteServiceProvider<Service: ProviderType & PersistenceProviderType,
-                                ResponseType: Codable & TranslatorProtocol> {
+                                       ResponseType: LiteResponseType> {
 
     let network: NetworkServiceProvider<Service, ResponseType>
     let configuration: RLMRealmConfiguration
@@ -28,9 +30,23 @@ public final class LiteServiceProvider<Service: ProviderType & PersistenceProvid
 }
 
 public extension LiteServiceProvider {
+
     func perform(_ provider: Service, _ responseCallback: @escaping (Response<ResponseType>) -> Void) {
         let persistence = PersistedServiceProvider<Service, ResponseType>(configuration: configuration)
         let composedServiceProvider = persistence |& network
         composedServiceProvider.execute(provider, responseCallback)
+    }
+
+    func perform(_ provider: Service) -> Promise<ResponseType?> {
+        return Promise<ResponseType?> { seal in
+            perform(provider) { response in
+                switch response {
+                case .success(let data):
+                    seal.fulfill(data)
+                case .failure(let error):
+                    seal.reject(error)
+                }
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ project 'Lite/Lite/Lite.xcodeproj'
 target 'Lite' do
   pod 'SwiftLint', '0.26.0'
   pod 'RealmSwift', '3.7.4'
+  pod 'PromiseKit', '6.5.2'
 end
 
 target 'LiteTests' do
