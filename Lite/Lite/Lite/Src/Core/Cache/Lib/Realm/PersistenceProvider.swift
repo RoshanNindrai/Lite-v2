@@ -10,5 +10,5 @@ import Foundation
 import RealmSwift
 
 public protocol PersistenceProviderType {
-    var predicate: NSPredicate { get }
+    var predicate: NSPredicate? { get }
 }

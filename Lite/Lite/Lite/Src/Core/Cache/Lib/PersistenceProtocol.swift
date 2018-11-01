@@ -11,6 +11,7 @@ import Foundation
 public enum PersistenceError: Error {
     case failedInitializingRealm
     case noDataFound
+    case predicateNotFound
     case failedToPersistData
 }
 

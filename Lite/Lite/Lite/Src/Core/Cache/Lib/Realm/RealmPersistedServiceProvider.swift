@@ -37,7 +37,11 @@ extension PersistedServiceProvider {
 
     public func perform(_ provider: ServiceProviderType,
                         _ responseCallback: @escaping (Response<Resource>) -> Void) {
-        persistence.fetch(provider.predicate, ResponseCallback<Resource> { response in
+        guard let predicate = provider.predicate else {
+            responseCallback(.failure(PersistenceError.predicateNotFound))
+            return
+        }
+        persistence.fetch(predicate, ResponseCallback<Resource> { response in
             switch response {
             case .success(let resource):
                 responseCallback(.success(resource))
